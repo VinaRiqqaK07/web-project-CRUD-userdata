@@ -1,0 +1,76 @@
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+  .content {
+    display: flex;
+    padding: 0 16px;
+    max-width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+table {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2c87e1;
+    color: white;
+  }
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+.btn {
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+}
+
+.btn-submit {
+box-shadow:inset 0px -3px 7px 0px #29bbff;
+background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+background-color:#1976d2;
+display:inline-block;
+  border-radius: 5px;
+cursor:pointer;
+color:#ffffff;
+font-size: 12px;
+font-weight:bold;
+padding: 9px 65px;
+text-decoration:none;
+  border: none;
+}
+.btn-submit:hover {
+background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+background-color:#0688fa;
+}
+.btn-submit:active {
+position:relative;
+top:1px;
+}

@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div *ngIf="errormsg" class="alert alert-warning" role="alert">
+            {{errormsg}}
+        </div>
+
+        <div *ngIf="succesmsg" class="alert alert-success" role="alert">
+            {{succesmsg}}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!--
+    <div class="toolbar" role="banner">
+        <span class="toolbar-span">Angular Form</span>
+        <div class="spacer"></div>
+      </div>-->
+      <div class="content" role="main">
+        <h1>User Registration</h1>
+        <div class="card-container">
+            <div class="card">
+            <!--<p>form-component works!</p>-->
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstname">First Name</label><br>
+                <input formControlName="firstname" type="text" name="firstname" placeholder="Enter your firstname" class="form-control" (ngModel)="user.firstname">
+                <div *ngIf="userForm.controls['firstname'].touched && userForm.controls['firstname'].invalid">
+                    <span *ngIf="userForm.controls['firstname'].errors?.['required']">*Required field</span>
+                    <span *ngIf="userForm.controls['firstname'].errors?.['minlength']">*Must be at least 2 characters</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastname">Last Name</label><br>
+                <input formControlName="lastname" type="text" name="lastname" class="form-control" (ngModel)="user.lastname" placeholder="Enter your lastname">
+                <div *ngIf="userForm.controls['lastname'].touched && userForm.controls['lastname'].invalid">
+                    <span *ngIf="userForm.controls['lastname'].errors?.['required']">*Required field</span>
+                    <span *ngIf="userForm.controls['lastname'].errors?.['minlength']">*Must be at least 2 characters</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label><br>
+                <input formControlName="email" type="email" name="email" class="form-control" (ngModel)="user.email" placeholder="Enter your email">
+                <div *ngIf="userForm.controls['email'].touched && userForm.controls['email'].invalid">
+                    <span *ngIf="userForm.controls['email'].errors?.['required']">*Required field</span>
+                    <span *ngIf="userForm.controls['email'].errors?.['email']">*Invalid</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label><br>
+                <input formControlName="password" type="password" name="password" class="form-control" (ngModel)="user.password" placeholder="Enter your password">
+                <div *ngIf="userForm.controls['password'].touched && userForm.controls['password'].invalid">
+                    <span *ngIf="userForm.controls['password'].errors?.['required']">*Required field</span>
+                    <span *ngIf="userForm.controls['password'].errors?.['minlength']">*Must be at least 8 characters</span>
+                </div>
+            </div>
+            <pre></pre>
+            <div class="button-center">
+                <button class="btn btn-submit" type="submit" [disabled]="!userForm.valid">Submit</button>
+            </div> 
+        </form>
+            </div>
+        </div>
+        <div class="button-center">
+            <button class="btn btn-back" (click)="goToPage('list')"> Back to User List</button>
+        </div>
+      </div>
+    
+</div>

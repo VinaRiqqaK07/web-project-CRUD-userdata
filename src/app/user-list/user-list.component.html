@@ -1,0 +1,28 @@
+<div class="content" role="main">
+    <h2>Get all data</h2>
+    <table>
+        <tr>
+            <th class="table-title">ID</th>
+            <th class="table-title">Firstname</th>
+            <th class="table-title">Lastname</th>
+            <th class="table-title">Email</th>
+            <th class="table-title">Password</th>
+            <th class="table-title">Ket.</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>
+                <button class="btn btn-edit" (click)="toeditUser(user.id)">Edit</button>
+                <button class="btn btn-delete" (click)="removeUser(user.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+    <div class="button-center">
+        <button class="btn btn-submit" (click)="gotoForm()">Create New User</button>
+    </div>
+</div>
+
